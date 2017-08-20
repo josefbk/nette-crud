@@ -1,3 +1,8 @@
+Spuštění
+------------
+- Je potřeba vytvořit db a nahrát do ní tabulku z db_dump/projekt.sql
+- Je potřeba vytvořit soubor config.local.neon (podle souboru app/config/config.local.neon.dist - v podstatě jen nastavit připojení do db) 
+
 Nette Web Project
 =================
 
