@@ -49,6 +49,7 @@ class ProjektFormControl extends Control
             ->addRule(Form::MAX_LENGTH, "Maximální počet znaků je 300", 300);
         $datumInput = $form->addText(Projekt::COLUMN_DATUM_ODEVZDANI_PROJEKTU, "Datum odevzdání");
         $datumInput->getControlPrototype()->addClass("datepicker");
+        $datumInput->setAttribute('placeholder','dd.mm.rrrr');
         $datumInput->setRequired("Je potřeba vyplnit datum odevzdání");
         $form->addSelect(Projekt::COLUMN_TYP_PROJEKTU, "Typ projektu", Projekt::getTypyProjektu())
             ->setRequired("Je potřeba vybrat typ projektu");
