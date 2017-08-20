@@ -1,0 +1,11 @@
+{block content}
+
+
+<h1 n:block="title">{if !empty($idProjektu)}Editace projektu{else}Vložení projektu{/if}</h1>
+
+
+<a href="{link Homepage:default}">Zpět na přehled</a>
+<hr>
+
+
+{control projektFormControl}

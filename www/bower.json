@@ -1,0 +1,17 @@
+{
+  "name": "projekty",
+  "authors": [
+    "Josef"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "",
+    "jquery": "",
+    "ublaboo-datagrid": "",
+    "components-font-awesome": "^4.7.0"
+  }
+}

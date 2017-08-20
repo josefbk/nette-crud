@@ -1,0 +1,26 @@
+<div>
+    {foreach $flashes as $flash}
+        <div class="alert alert-{$flash->type} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">×</span>
+            </button>
+            <strong>
+                {switch ($flash->type)}
+                    {case 'danger'}
+                    Chyba<br>
+                {case 'warning'}
+                    Pozor<br>
+                {case 'success'}
+                    Úspěch<br>
+                {case 'info'}
+                    Informace<br>
+                {case 'default'}
+                    Informace<br>
+                {case 'primary'}
+                {default}
+                    Upozornění<br>
+                {/switch}
+            </strong> {$flash->message}
+        </div>
+    {/foreach}
+</div>
