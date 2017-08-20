@@ -17,7 +17,7 @@ class Projekt
         COLUMN_WEBOVY_PROJEKT = "webovy_projekt";
 
     const TYP_PROJEKTU_CASOVE_OMEZENY = 1,
-        TYP_PROJEKTU_CONTINOUS_INTEGRATION = 2;
+        TYP_PROJEKTU_CONTINUOUS_INTEGRATION = 2;
 
     /**
      * seznam typů projektu
@@ -28,7 +28,7 @@ class Projekt
     {
         $arr = [
             self::TYP_PROJEKTU_CASOVE_OMEZENY => "Časově omezený",
-            self::TYP_PROJEKTU_CONTINOUS_INTEGRATION => "Continous Integration"
+            self::TYP_PROJEKTU_CONTINUOUS_INTEGRATION => "Continuous Integration"
         ];
         if ($allowNull) {
             return [null => "Všechny"] + $arr;
