@@ -49,14 +49,14 @@
     <script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-spinners.js"></script>
 
     <script type="text/javascript">
-        /*grid*/
-        $('[data-provide=datepicker]').datepicker({
-            language: "cs",
-            format: 'dd.mm.yyyy',
-            autoclose: true,
-        })
+        //datepicker - pro grid ublaboo
+        $(document).ready(function(){
+            $.fn.datepicker.defaults.language = 'cs';
+            $.fn.datepicker.defaults.autoclose = true;
+            $.fn.datepicker.defaults.format = 'dd.mm';
+        });
         /*form input*/
-        ;$('.datepicker.form-control.text').datepicker({
+        $('.datepicker.form-control.text').datepicker({
             language: "cs",
             format: 'dd.mm.yyyy',
             autoclose: true,
