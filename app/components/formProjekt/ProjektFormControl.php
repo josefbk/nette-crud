@@ -82,7 +82,7 @@ class ProjektFormControl extends Control
     }
 }
 
-interface IProjketFormFactory
+interface IProjektFormFactory
 {
 
     /**

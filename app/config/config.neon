@@ -18,7 +18,7 @@ services:
 	#forms
 	- App\Forms\FormFactory
 	#components
-	- Cntrl\IProjketFormFactory
+	- Cntrl\IProjektFormFactory
 	- Cntrl\IProjektGridFactory
 
 forms:

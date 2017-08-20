@@ -3,10 +3,8 @@
 namespace App\Presenters;
 
 use App\Model\Projekt;
-use Cntrl\IProjektGridControl;
 use Cntrl\IProjektGridFactory;
-use Cntrl\IProjketFormControl;
-use Cntrl\IProjketFormFactory;
+use Cntrl\IProjektFormFactory;
 use Nette;
 use Tracy\Debugger;
 use Ublaboo\DataGrid\DataGrid;
@@ -28,7 +26,7 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
         $this->getTemplate()->idProjektu = $id;
     }
 
-    /** @var IProjketFormFactory @inject */
+    /** @var IProjektFormFactory @inject */
     public $iProjektFormFactory;
 
     /**
