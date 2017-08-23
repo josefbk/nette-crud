@@ -73,6 +73,9 @@ class Projekt
 
     public function insert($data)
     {
+        if (array_key_exists(self::COLUMN_ID, $data)) {
+            unset($data[self::COLUMN_ID]);
+        }
         $this->getTable()->insert($data);
     }
 
