@@ -15,8 +15,9 @@ services:
 	router: App\RouterFactory::createRouter
 	#model
 	- App\Model\Projekt
-	#forms
+	#factories
 	- App\Forms\FormFactory
+	- App\Grids\UblabooFactory
 	#components
 	- Cntrl\IProjektFormFactory
 	- Cntrl\IProjektGridFactory

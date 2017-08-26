@@ -3,6 +3,7 @@
 namespace Cntrl;
 
 
+use App\Grids\UblabooFactory;
 use App\Model\Projekt;
 use Nette\Application\UI\Control;
 use Nette\Database\Table\ActiveRow;
@@ -12,9 +13,12 @@ class ProjektGridControl extends Control
 {
     private $modelProjekt;
 
-    public function __construct(Projekt $modelProjekt)
+    private $ublabooFactory;
+
+    public function __construct(Projekt $modelProjekt, UblabooFactory $ublabooFactory)
     {
         $this->modelProjekt = $modelProjekt;
+        $this->ublabooFactory = $ublabooFactory;
     }
 
     public function render()
@@ -30,7 +34,7 @@ class ProjektGridControl extends Control
      */
     public function createComponentVypisProjektu($name)
     {
-        $grid = new DataGrid($this, $name);
+        $grid = $this->ublabooFactory->create($this, $name);
         $grid->setDataSource($this->modelProjekt->getTable());
         //sloupce
         $grid->addColumnNumber(Projekt::COLUMN_ID, "ID")->setSortable();
@@ -58,28 +62,6 @@ class ProjektGridControl extends Control
             ->setConfirm(function ($item) {
                 return 'Opravdu odstranit projekt ID ' . $item[Projekt::COLUMN_ID] . ' - %s?';
             }, Projekt::COLUMN_NAZEV_PROJEKTU);
-
-        /**
-         * Localization
-         */
-        $translator = new \Ublaboo\DataGrid\Localization\SimpleTranslator([
-            'ublaboo_datagrid.no_item_found_reset' => 'Žádné položky nenalezeny. Filtr můžete vynulovat',
-            'ublaboo_datagrid.no_item_found' => 'Žádné položky nenalezeny.',
-            'ublaboo_datagrid.here' => 'zde',
-            'ublaboo_datagrid.items' => 'Položky',
-            'ublaboo_datagrid.all' => 'všechny',
-            'ublaboo_datagrid.from' => 'z',
-            'ublaboo_datagrid.reset_filter' => 'Resetovat filtr',
-            'ublaboo_datagrid.group_actions' => 'Hromadné akce',
-            'ublaboo_datagrid.show_all_columns' => 'Zobrazit všechny sloupce',
-            'ublaboo_datagrid.hide_column' => 'Skrýt sloupec',
-            'ublaboo_datagrid.action' => 'Akce',
-            'ublaboo_datagrid.previous' => 'Předchozí',
-            'ublaboo_datagrid.next' => 'Další',
-            'ublaboo_datagrid.choose' => 'Vyberte',
-            'ublaboo_datagrid.execute' => 'Provést',
-        ]);
-        $grid->setTranslator($translator);
 
         return $grid;
 
