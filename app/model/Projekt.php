@@ -16,8 +16,8 @@ class Projekt
         COLUMN_TYP_PROJEKTU = "typ_projektu",
         COLUMN_WEBOVY_PROJEKT = "webovy_projekt";
 
-    const TYP_PROJEKTU_CASOVE_OMEZENY = 1,
-        TYP_PROJEKTU_CONTINUOUS_INTEGRATION = 2;
+    const TYP_PROJEKTU_CASOVE_OMEZENY = 'casove_omezeny',
+        TYP_PROJEKTU_CONTINUOUS_INTEGRATION = 'prubezny';
 
     /**
      * seznam typů projektu
@@ -82,7 +82,7 @@ class Projekt
     public function update($data)
     {
         if (!array_key_exists(self::COLUMN_ID, $data)) {
-            throw new \Exception("chyby id editovaneho zaznamu");
+            throw new \Exception("chybi id editovaneho zaznamu");
         }
         $row = $this->getById($data[self::COLUMN_ID]);
         if (!$row instanceof ActiveRow) {
