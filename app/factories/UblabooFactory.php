@@ -31,9 +31,16 @@ class UblabooFactory
             'ublaboo_datagrid.next' => 'Další',
             'ublaboo_datagrid.choose' => 'Vyberte',
             'ublaboo_datagrid.execute' => 'Provést',
+            'ublaboo_datagrid.daterange_alternative_do' => 'Do', //+ rozsireni puvodniho ublaboo o vlastni daterange latte
+            'ublaboo_datagrid.daterange_alternative_od' => 'Od', //+ rozsireni puvodniho ublaboo o vlastni daterange latte
         ]);
         $grid->setTranslator($translator);
 
         return $grid;
+    }
+
+    public function getFilterDateRangeAlternativeTemplate()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR . "datagrid_filter_daterange_alternative.latte";
     }
 }

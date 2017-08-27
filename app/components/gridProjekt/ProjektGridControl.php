@@ -49,7 +49,8 @@ class ProjektGridControl extends Control
         //filtry
         $grid->addFilterText(Projekt::COLUMN_ID, "ID");
         $grid->addFilterText(Projekt::COLUMN_NAZEV_PROJEKTU, "Název");
-        $grid->addFilterDateRange(Projekt::COLUMN_DATUM_ODEVZDANI_PROJEKTU, "Datum odevzdání");
+        $grid->addFilterDateRange(Projekt::COLUMN_DATUM_ODEVZDANI_PROJEKTU, "Datum odevzdání")
+            ->setTemplate($this->ublabooFactory->getFilterDateRangeAlternativeTemplate());
         $grid->addFilterSelect(Projekt::COLUMN_TYP_PROJEKTU, "Typ projektu", Projekt::getTypyProjektu(true));
         $grid->addFilterSelect(Projekt::COLUMN_WEBOVY_PROJEKT, "Webový projekt", [null => "Vše", 1 => "Ano", 0 => "Ne"]);
         //akce
